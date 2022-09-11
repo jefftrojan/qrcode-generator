@@ -3,11 +3,12 @@
     <head>
         <title> QR Code Generator </title>
         <link rel="stylesheet" href="style.css" />
+        <script type="javascript" src="script.js"></script>
     </head>
     <body>
         <div>
             <label>Text: </label>
-            <input name="qrcode" type="text"/>
+            <input name="qrcode" type="text" onchange="generatecode(this.value)"/>
         </div>
         <img id="qrcode"/>
     </body>

@@ -1,6 +1,6 @@
 from crypt import methods
 from urllib import response
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 from flask_cors import CORS
 import qrcode
 from io import BytesIO
@@ -8,6 +8,12 @@ from io import BytesIO
 
 app = Flask(__name__)
 CORS(app)
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+
 
 @app.route('/generate', methods=['POST'])
 def generator():
